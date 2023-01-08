@@ -1,0 +1,30 @@
+.nav-container {
+    background-color: #0E0E0E;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.438);
+
+    .navbar {
+        z-index: 545;
+        width: 80%;
+        border-radius: 10px;
+        margin: 0 auto;
+    }
+
+    .link {
+        font-family: mark-bold;
+
+        &:hover {
+            color: #02f0ac;
+        }
+    }
+
+    svg {
+        &:hover {
+            color: #02f0ac;
+        }
+    }
+
+}
+
+.active {
+    color: #02f0ac;
+}

@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: mark-medium;
+  font-weight: 500;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: mark-black;
+  src: url('../src/assets/fonts/MarkPro-Black.otf');
+}
+
+@font-face {
+  font-family: mark-heavy;
+  src: url('../src/assets/fonts/Mark.Pro.Heavy.otf');
+}
+
+@font-face {
+  font-family: mark-bold;
+  src: url('../src/assets/fonts/Mark.Pro.Bold.otf');
+}
+
+@font-face {
+  font-family: mark-regular;
+  src: url('../src/assets/fonts/MarkPro-Regular.otf');
+}
+
+@font-face {
+  font-family: mark-medium;
+  src: url('../src/assets/fonts/MarkPro-Medium.ttf');
+}

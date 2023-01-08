@@ -1,0 +1,77 @@
+.banner {
+
+    border-radius: 0.25rem;
+
+    display: flex;
+    align-items: center;
+
+    .banner-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+
+            width: 300px;
+            height: 300px;
+        }
+    }
+
+
+    .banner-title {
+        --animate-duration: 0.8s;
+        color: transparent;
+        font-family: mark-heavy;
+    }
+
+    .type-writer {
+        color: #02F0AC;
+        font-size: 20px;
+        font-family: mark-bold;
+    }
+
+    .banner-card {
+        height: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.363);
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        &:hover {
+            transform: scale(1.02) !important;
+        }
+    }
+
+    .letters {
+        background-color: #00a98f;
+        color: #fff;
+    }
+
+    .spotify {
+        background-color: #1B1413;
+    }
+
+    .favs {
+        background-color: #0f0e0e;
+        color: #ff4c4c;
+    }
+
+    .album {
+        background: rgb(249, 58, 0);
+        color: #ff4c4c;
+    }
+
+    .tiktok {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .list {
+        background-color: #4F9AC5;
+        color: #fff;
+    }
+
+}

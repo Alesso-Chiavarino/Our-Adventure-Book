@@ -1,0 +1,21 @@
+.input-search {
+
+    width: 300px;
+    font-family: mark-medium;
+    font-size: 14px;
+    background-color: #292929;
+    border: 1px solid rgba(255, 255, 255, 0.253);
+    border-radius: 5px;
+
+    &:focus {
+        transition: all 0.2s;
+        box-shadow: none !important;
+        border: 1px solid #02f0ac;
+
+        &::placeholder {
+            color: rgb(219, 219, 219);
+        }
+    }
+
+
+}

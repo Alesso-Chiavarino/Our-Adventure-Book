@@ -1,0 +1,11 @@
+.adventures-section {
+    background-color: #0E0E0E;
+
+    .btn-pagination {
+        background-color: #17CC99;
+        font-family: mark-bold;
+        &:hover {
+            background-color: #17cc99d5;
+        }
+    }
+}

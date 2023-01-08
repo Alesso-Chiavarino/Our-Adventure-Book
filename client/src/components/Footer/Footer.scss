@@ -1,0 +1,16 @@
+.footer {
+    background-color: #0E0E0E;
+    padding: 1rem;
+    text-align: center;
+    color: #6c757d;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 10px 15px 1px rgba(255, 255, 255, 0.5);
+    .heart {
+        font-size: 1rem;
+        margin-bottom: 3px;
+    }
+}

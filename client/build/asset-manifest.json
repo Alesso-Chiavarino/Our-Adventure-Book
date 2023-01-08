@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.634cad72.css",
+    "main.js": "/static/js/main.52b1ecb6.js",
+    "static/media/MarkPro-Regular.otf": "/static/media/MarkPro-Regular.01793bec8b1cff95ee18.otf",
+    "static/media/Mark.Pro.Bold.otf": "/static/media/Mark.Pro.Bold.62069f88a00179469e9c.otf",
+    "static/media/Mark.Pro.Heavy.otf": "/static/media/Mark.Pro.Heavy.362131d4a269c8074591.otf",
+    "static/media/MarkPro-Black.otf": "/static/media/MarkPro-Black.afb4faf054ac00a55ea3.otf",
+    "static/media/MarkPro-Medium.ttf": "/static/media/MarkPro-Medium.b2c5cc8c0cd855c642c8.ttf",
+    "index.html": "/index.html",
+    "main.634cad72.css.map": "/static/css/main.634cad72.css.map",
+    "main.52b1ecb6.js.map": "/static/js/main.52b1ecb6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.634cad72.css",
+    "static/js/main.52b1ecb6.js"
+  ]
+}
