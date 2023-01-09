@@ -24,7 +24,7 @@ const Banner = () => {
                         </div>
                     </Link>
 
-                    <Link to='/list'>
+                    <Link to='/tasks'>
                         <div className="banner-card list animate__animated animate__flipInY animate__faster " style={{ animationDelay: "400ms" }}>
                             <FaListAlt className='h-30 w-30 lg:h-16 lg:w-16' />
                         </div>

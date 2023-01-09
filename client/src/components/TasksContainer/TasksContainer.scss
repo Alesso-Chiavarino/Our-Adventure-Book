@@ -1,0 +1,29 @@
+.tasks-container {
+    background-color: #0E0E0E;
+    min-height: 100vh;
+
+    .tasks-container-title {
+        font-size: 40px;
+        color: #fff;
+        text-align: center;
+        font-family: mark-heavy;
+    }
+
+    aside {
+        width: 20%;
+        // background-color: aqua;
+        display: flex;
+        flex-direction: column;
+        // padding: 20px;
+        gap: 10px;
+    }
+    .card-task-container {
+        width: 80%;
+        // background-color: rgb(0, 121, 121);
+        // display: flex;
+        // gap: 20px;
+        // flex-wrap: wrap;
+    }
+
+
+}

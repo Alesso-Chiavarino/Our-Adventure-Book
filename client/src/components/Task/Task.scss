@@ -1,0 +1,29 @@
+.task {
+    background-color: #171717;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.473);
+    width: 100%;
+    // height: fit-content;
+    height: 200px;
+    .task-body {
+        // padding: 10px;
+        .top {
+            // padding: 10px;
+            background-color: #27272A;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h5 {
+            color: #fff;
+            font-family: mark-heavy;
+            font-size: 20px;
+        }
+        p {
+            padding: 10px;
+            color: #ccc;
+            font-family: mark-medium;
+            font-size: 15px;
+        }
+    } 
+}
