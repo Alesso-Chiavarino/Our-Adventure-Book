@@ -1,10 +1,10 @@
 import axios from "axios";
 
-export const getTasksRequest = async (isDone) => {
+export const getTasksRequest = async (isDone, page) => {
     if(isDone === '') {
-        return await axios.get('/api/tasks');
+        return await axios.get(`/api/tasks?page=${page}`);
     }
-    return await axios.get(`/api/tasks?isDone=${isDone}`);
+    return await axios.get(`/api/tasks?isDone=${isDone}&page=${page}`);
 }
 
 export const getTaskRequest = async (id) => {

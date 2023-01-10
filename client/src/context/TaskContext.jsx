@@ -12,8 +12,9 @@ const TaskProvider = ({ children }) => {
 
     const [tasks, setTasks] = useState([])
 
-    const getTasks = async (isDone) => {
-        const tasks = await getTasksRequest(isDone);
+    const getTasks = async (isDone, page) => {
+        const tasks = await getTasksRequest(isDone, page);
+        // console.log(tasks.data)
         setTasks(tasks.data);
     }
 

@@ -2,18 +2,34 @@ import Task from "../models/Task.js";
 
 export const getTasks = async (req, res) => {
 
-    const {limit, page, isDone} = req.query;
+    const {page, isDone} = req.query;
     // const {page} = req.query;
 
-    if(req.query.limit || req.query.page || req.query.isDone) {
+    if(req.query.isDone) {
         const tasks = await Task.paginate({
             done: isDone
+        }, {
+            limit: 12,
+            page
         })
 
         return res.json(tasks)
     }
 
-    const tasks = await Task.paginate();
+    if(req.query.page) {
+        const tasks = await Task.paginate({
+        }, {
+            limit: 12,
+            page
+        })
+
+        return res.json(tasks)
+    }
+
+    const tasks = await Task.paginate({}, {
+        limit: 12,
+    });
+
     res.json(tasks);
 
 }
