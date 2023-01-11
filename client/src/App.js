@@ -10,6 +10,7 @@ import SearchProvider from "./context/SearchContext";
 import AdventureModal from "./components/AdventureModal/AdventureModal";
 import TasksContainer from "./components/TasksContainer/TasksContainer";
 import TaskProvider from "./context/TaskContext";
+import TaskForm from "./components/TaskForm/TaskForm";
 
 const App = () => {
   return (
@@ -27,7 +28,8 @@ const App = () => {
               <Route path="/adventures/:fav" element={<Adventures />} />
               <Route path="/tasks" element={<TasksContainer />} />
               <Route path="/tasks/:pending" element={<TasksContainer />} />
-              {/* <Route path="/tasks/:filter" element={<TasksContainer />} /> */}
+              <Route path="/tasks/form" element={<TaskForm />} />
+              <Route path="/tasks/form/:id" element={<TaskForm />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />

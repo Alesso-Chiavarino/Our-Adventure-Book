@@ -14,7 +14,6 @@ const TaskProvider = ({ children }) => {
 
     const getTasks = async (isDone, page) => {
         const tasks = await getTasksRequest(isDone, page);
-        // console.log(tasks.data)
         setTasks(tasks.data);
     }
 
@@ -25,18 +24,24 @@ const TaskProvider = ({ children }) => {
 
     const createTask = async (task) => {
         const newTask = await createTaskRequest(task);
-        setTasks([...tasks, newTask])
+        setTasks([...tasks.docs, newTask])
     }
 
-    const updateTask = async (id, task) => {
+    const updateTask = async (id, task, isDone) => {
         const updatedTask = await updateTaskRequest(id, task);
+        if(isDone || !isDone) {
+            const tasks = await getTasksRequest(isDone, 1);
+            return setTasks(tasks.data);
+        }
+        console.log('paso')
         const tasks = await getTasksRequest('');
         setTasks(tasks.data)
     }
 
     const deleteTask = async (id) => {
         await deleteTaskRequest(id);
-        setTasks(tasks.filter(task => task._id !== id))
+        const newTasks = await getTasksRequest('', 1);
+        setTasks(newTasks.data)
     }
 
     return (

@@ -4,6 +4,7 @@ export const getTasksRequest = async (isDone, page) => {
     if(isDone === '') {
         return await axios.get(`/api/tasks?page=${page}`);
     }
+    
     return await axios.get(`/api/tasks?isDone=${isDone}&page=${page}`);
 }
 

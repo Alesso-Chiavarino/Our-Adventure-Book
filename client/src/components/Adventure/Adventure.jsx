@@ -87,11 +87,15 @@ const Adventure = ({ title, description, _id, image, date, id, category, setAllF
             }} />}
           </div>
           <div className="adventure-icons absolute gap-5 flex right-2 top-2">
-            <AiFillEdit className='text-white cursor-pointer edit' onClick={() => {
+            <AiFillEdit className='text-white cursor-pointer edit' onClick={(e) => {
+              e.stopPropagation();
               window.scroll(0, 50);
               navigate(`/new/${_id}`)
             }} />
-            <FaTrashAlt className='text-white cursor-pointer trash' onClick={() => deleteAdventure(_id)} />
+            <FaTrashAlt className='text-white cursor-pointer trash' onClick={(e) => {
+              e.stopPropagation();
+              deleteAdventure(_id)
+            }} />
           </div>
 
           {image && <img className='adv-img' src={image.url} alt={title} />}
@@ -123,11 +127,15 @@ const Adventure = ({ title, description, _id, image, date, id, category, setAllF
             }} />}
           </div>
           <div className="adventure-icons absolute gap-5 flex right-2 top-2">
-            <AiFillEdit className='text-white cursor-pointer edit' onClick={() => {
+            <AiFillEdit className='text-white cursor-pointer edit' onClick={(e) => {
+              e.stopPropagation();
               window.scroll(0, 50);
               navigate(`/new/${_id}`)
             }} />
-            <FaTrashAlt className='text-white cursor-pointer trash' onClick={() => deleteAdventure(_id)} />
+            <FaTrashAlt className='text-white cursor-pointer trash' onClick={(e) => {
+              e.stopPropagation();
+              deleteAdventure(_id)
+            }} />
           </div>
 
           {image && <img className='adv-img' src={image.url} alt={title} />}

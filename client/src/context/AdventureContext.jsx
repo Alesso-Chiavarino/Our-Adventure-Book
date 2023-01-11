@@ -25,10 +25,10 @@ const AdventureProvider = ({ children }) => {
     }
 
     const createAdventure = async (data) => {
-        console.log(data)
+        // console.log(data)
         const result = await createAdventureRequest(data)
         setAdventures([...adventures, result.data])
-        console.log(result)
+        // console.log(result)
     }
 
     const deleteAdventure = (id) => {

@@ -10,7 +10,7 @@ import { RxDoubleArrowLeft, RxDoubleArrowRight } from 'react-icons/rx';
 const TasksContainer = () => {
 
 
-    const { tasks, getTasks, updateTask } = useTask();
+    const { tasks, getTasks, updateTask, deleteTask } = useTask();
 
     useEffect(() => {
         getTasks('', 1)
@@ -39,28 +39,49 @@ const TasksContainer = () => {
     }
 
     const handlePrevius = () => {
-        if (tasks.hasPrevPage) {
-            getTasks('', tasks.prevPage);
+        if (isAll) {
+            if (tasks.hasPrevPage) {
+                return getTasks('', tasks.prevPage);
+            }
+        }
+        if (isPending) {
+            if (tasks.hasPrevPage) {
+                return getTasks(false, tasks.prevPage);
+            }
+        }
+        if (isDone) {
+            if (tasks.hasPrevPage) {
+                return getTasks(true, tasks.prevPage);
+            }
         }
     }
 
     const handleNext = () => {
-        if (tasks.hasNextPage) {
-            getTasks('', tasks.nextPage)
+        if (isAll) {
+            if (tasks.hasNextPage) {
+                return getTasks('', tasks.nextPage);
+            }
+        }
+        if (isPending) {
+            if (tasks.hasNextPage) {
+                return getTasks(false, tasks.nextPage);
+            }
+        }
+        if (isDone) {
+            if (tasks.hasNextPage) {
+                return getTasks(true, tasks.nextPage);
+            }
         }
     }
-
-    console.log(tasks.hasPrevPage)
-    console.log(tasks.hasNextPage)
-
-    // if(tasks.hasPrevPage) {
-    //     console.log('has prev page')
-    // }
 
     return (
         <section className='tasks-container'>
             <main className='container mx-auto'>
-                <h1 className='tasks-container-title pt-5'>Our Tasks</h1>
+                <div className='flex justify-between items-center'>
+                    <span className='tasks-container-title collapse pt-5 '>+</span>
+                    <h1 className='tasks-container-title pt-5'>Our Tasks</h1>
+                    <Link className='bg-green-500 rounded-full w-9 h-9 text-3xl flex items-center justify-center text-white hover:bg-green-400' to='/tasks/form'>+</Link>
+                </div>
                 <div className='flex gap-5 pt-5'>
                     <aside>
                         {isAll ? <span className=' bg-gray-50 cursor-pointer rounded-md p-1.5 flex items-center gap-2 text-gray-700' onClick={() => {
@@ -99,14 +120,15 @@ const TasksContainer = () => {
                     </aside>
                     <div className='card-task-container'>
                         <div className='flex justify-between mb-2'>
-                            {tasks.docs.length === 0 ? <span className='text-gray-400'>No tasks</span> : <span className='text-gray-400'>{tasks.docs.length} tasks</span>}
                             {!tasks.hasPrevPage ? <span className='flex w-20  bg-green-900 text-white rounded-md justify-center items-center text-sm  gap-1 py-1 px-2 cursor-pointer' onClick={handlePrevius}> <RxDoubleArrowLeft className='text-white' /> Previus</span> : <span className='flex btn-pagination text-white rounded-md justify-center items-center w-20 gap-1 text-sm px-2 py-1 cursor-pointer' onClick={handlePrevius}> <RxDoubleArrowLeft className='text-white' /> Previus</span>}
-
 
                             {!tasks.hasNextPage ? <span className='flex w-20  bg-green-900 text-white rounded-md justify-center items-center text-sm  gap-1 py-1 px-2 cursor-pointer' onClick={handleNext} >Next <RxDoubleArrowRight className='text-white' /></span> : <span className='flex btn-pagination text-white rounded-md justify-center items-center w-20 gap-1 text-sm px-2 py-1 cursor-pointer' onClick={handleNext} >Next <RxDoubleArrowRight className='text-white' /></span>}
                         </div>
+                        {tasks.docs?.length === 0 && isAll ? <span className='text-white flex items-center gap-1'>No tasks yet </span> : null}
+                        {tasks.docs?.length === 0 && isPending ? <span className='text-white flex items-center gap-1'><BsFillCheckSquareFill className='mb-1' />Tasks up to date </span> : null}
+                        {tasks.docs?.length === 0 && isDone ? <span className='text-white flex items-center gap-1'><BsFillXSquareFill className='mb-1' />No tasks done </span> : null}
                         <div className='grid md:grid-cols-3 sm:grid-cols-2 gap-5'>
-                            {tasks.docs?.map((task) => <Task key={task._id} {...task} updateTask={updateTask} />)}
+                            {tasks.docs?.map((task) => <Task key={task._id} {...task} deleteTask={deleteTask} updateTask={updateTask} isDone={isDone} isPending={isPending} getTasks={getTasks} isAll={isAll} />)}
                         </div>
                     </div>
                 </div>
