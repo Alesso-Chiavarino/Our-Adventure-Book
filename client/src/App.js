@@ -14,6 +14,7 @@ import TaskForm from "./components/TaskForm/TaskForm";
 import TaskDetail from "./components/TaskDetail/TaskDetail";
 import LettersContainer from "./components/LettersContainer/LettersContainer";
 import LetterProvider from "./context/LetterContext";
+import LetterDetail from "./components/LetterDetail/LetterDetail";
 
 const App = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
                 <Route path="/tasks/detail/:id" element={<TaskDetail />} />
                 <Route path="*" element={<NotFound />} />
                 <Route path="/letters" element={<LettersContainer />} />
+                <Route path="/letters/detail/:id" element={<LetterDetail />} />
               </Routes>
               <Footer />
             </LetterProvider>

@@ -1,0 +1,55 @@
+.letter-detail-section {
+    background-color: #0E0E0E;
+    min-height: 100vh;
+
+    h1 {
+        font-size: 40px;
+        color: #fff;
+        text-align: center;
+        font-family: mark-heavy;
+        margin: 20px 0;
+    }
+
+    .letter-detail {
+
+        // min-height: 700px;
+        min-height: 700px;
+        background-color: #171717;
+        padding: 30px;
+        color: #ccc;
+
+        h3 {
+            font-size: 20px;
+            font-family: mark-heavy;
+            margin: 10px 0;
+        }
+
+        span {
+            font-size: 16px;
+            font-family: mark-medium;
+            margin: 10px 0;
+            border-bottom: 1px solid #0BCCAC;
+        }
+
+        hr {
+            border: 1px solid #0BCCAC;
+            margin: 10px 0;
+
+        }
+
+        p {
+            font-size: 16px;
+            margin: 30px 0;
+        }
+    }
+
+    .letter-detail-container {
+        height: 75%;
+        width: 40%;
+        background-color: #0BCCAC;
+        padding: 5px;
+        box-shadow: rgb(11 204 172 / 54%) 0px 2px 8px 0px;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+}

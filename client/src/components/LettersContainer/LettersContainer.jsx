@@ -6,10 +6,9 @@ import { useEffect, useState } from 'react';
 const LettersContainer = () => {
 
     const { getLetters, letters } = useLetter();
-    // const [letter, setLetter] = useState([])
 
     useEffect(() => {
-        getLetters()
+        getLetters();
     }, [])
 
 
