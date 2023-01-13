@@ -1,0 +1,47 @@
+.letters-container-section {
+    background-color: #0E0E0E;
+    min-height: 100vh;
+
+    h1 {
+        font-size: 40px;
+        color: #fff;
+        text-align: center;
+        font-family: mark-heavy;
+        margin: 20px 0;
+    }
+}
+
+.letter-container {
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: rgba(255, 255, 255, 0.32) 0px 0px 7px 0px;
+    width: 350px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    opacity: .9;
+    padding-bottom: 25px;
+
+    h3 {
+        font-size: 20px;
+        font-family: mark-bold;
+        color: #168868 !important;
+    }
+
+    &:hover {
+        transition: all 0.3s;
+        opacity: 1;
+    }
+}
+
+.letter {
+    height: 100%;
+    width: 100%;
+    background-image: url('../../../public/img/letter.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    // background-color: #02f0ac;
+    background-color: #168868;
+}

@@ -38,9 +38,9 @@ const TaskProvider = ({ children }) => {
         setTasks(tasks.data)
     }
 
-    const deleteTask = async (id) => {
+    const deleteTask = async (id, isDone) => {
         await deleteTaskRequest(id);
-        const newTasks = await getTasksRequest('', 1);
+        const newTasks = await getTasksRequest(isDone, 1);
         setTasks(newTasks.data)
     }
 

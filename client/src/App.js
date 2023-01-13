@@ -11,6 +11,9 @@ import AdventureModal from "./components/AdventureModal/AdventureModal";
 import TasksContainer from "./components/TasksContainer/TasksContainer";
 import TaskProvider from "./context/TaskContext";
 import TaskForm from "./components/TaskForm/TaskForm";
+import TaskDetail from "./components/TaskDetail/TaskDetail";
+import LettersContainer from "./components/LettersContainer/LettersContainer";
+import LetterProvider from "./context/LetterContext";
 
 const App = () => {
   return (
@@ -18,21 +21,25 @@ const App = () => {
       <SearchProvider>
         <TaskProvider>
           <AdventureProvider>
-            <Navbar />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/new" element={<Form />} />
-              <Route path="/new/:id" element={<Form />} />
-              <Route path="/adventures" element={<Adventures />} />
-              <Route path="/detail/:id" element={<AdventureModal />} />
-              <Route path="/adventures/:fav" element={<Adventures />} />
-              <Route path="/tasks" element={<TasksContainer />} />
-              <Route path="/tasks/:pending" element={<TasksContainer />} />
-              <Route path="/tasks/form" element={<TaskForm />} />
-              <Route path="/tasks/form/:id" element={<TaskForm />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-            <Footer />
+            <LetterProvider>
+              <Navbar />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/new" element={<Form />} />
+                <Route path="/new/:id" element={<Form />} />
+                <Route path="/adventures" element={<Adventures />} />
+                <Route path="/detail/:id" element={<AdventureModal />} />
+                <Route path="/adventures/:fav" element={<Adventures />} />
+                <Route path="/tasks" element={<TasksContainer />} />
+                <Route path="/tasks/:pending" element={<TasksContainer />} />
+                <Route path="/tasks/form" element={<TaskForm />} />
+                <Route path="/tasks/form/:id" element={<TaskForm />} />
+                <Route path="/tasks/detail/:id" element={<TaskDetail />} />
+                <Route path="*" element={<NotFound />} />
+                <Route path="/letters" element={<LettersContainer />} />
+              </Routes>
+              <Footer />
+            </LetterProvider>
           </AdventureProvider>
         </TaskProvider>
       </SearchProvider>
